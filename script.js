@@ -9,8 +9,12 @@ const labStatus = document.querySelector("#lab-status");
 // 01. Уберите /* и */ вокруг обработчика, сохраните файл и нажмите
 // первую карточку. Потом переходите к заданию 02 в TASKS.md.
 
+const eventName = "Город в деталях";
+let clickCount = 0;
+
 firstCard.addEventListener("click", () => {
-  labStatus.textContent = "Клик сработал. JavaScript подключен!";
+  clickCount = clickCount + 1;
+  labStatus.textContent = `${eventName}: нажатий ${clickCount}`;
 });
 
 
