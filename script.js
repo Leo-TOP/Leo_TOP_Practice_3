@@ -12,14 +12,18 @@ const labStatus = document.querySelector("#lab-status");
 const eventName = "Город в деталях";
 let clickCount = 0;
 
+const detailsTitle = document.querySelector("#details-title");
+
 firstCard.addEventListener("click", () => {
   clickCount = clickCount + 1;
   if (clickCount == 1) {
-  labStatus.textContent = `Первое открытие: ${eventName}`;
-} else {
-  labStatus.textContent = `Повторное открытие: ${eventName}`;
-}});
+    labStatus.textContent = `Первое открытие: ${eventName}`;
+  } else {
+    labStatus.textContent = `Повторное открытие: ${eventName}`;
+  }
 
+  detailsTitle.textContent = eventName;
+});
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
