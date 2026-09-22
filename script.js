@@ -32,6 +32,10 @@ secondCard.addEventListener("click", () => {
   detailsTitle.textContent = eventName1;
 });
 
+const cards = document.querySelectorAll("[data-event]");
+const eventCount = document.querySelector("#event-count");
+eventCount.textContent = cards.length;
+
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
 // обработчик для той же карточки, пока не разобрались с первым.
