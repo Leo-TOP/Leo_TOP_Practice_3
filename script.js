@@ -25,6 +25,13 @@ firstCard.addEventListener("click", () => {
   detailsTitle.textContent = eventName;
 });
 
+const secondCard = document.querySelector('[data-event="workshop"]');
+const eventName1 = "Мастерская постеров"
+
+secondCard.addEventListener("click", () => {
+  detailsTitle.textContent = eventName1;
+});
+
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
 // обработчик для той же карточки, пока не разобрались с первым.
