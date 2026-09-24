@@ -369,7 +369,7 @@ button:focus-visible {
   border-left: 8px solid var(--accent);
   border-radius: 16px;
   background: #e9eee9;
-  transition: border-color 180ms ease;
+  transition: border-color 500ms ease;
 }
 
 .details-panel__aside {
