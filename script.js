@@ -3,44 +3,32 @@
 // Семинар 1-3. Идите по заданиям 01–10 из TASKS.md.
 // Не вставляйте готовый код целиком: после каждого шага проверьте страницу.
 
-const firstCard = document.querySelector('[data-event="talk"]');
-const labStatus = document.querySelector("#lab-status");
-
 // 01. Уберите /* и */ вокруг обработчика, сохраните файл и нажмите
 // первую карточку. Потом переходите к заданию 02 в TASKS.md.
-
-const eventName = "Город в деталях";
-let clickCount = 0;
-
-const detailsTitle = document.querySelector("#details-title");
-
-firstCard.addEventListener("click", () => {
-  clickCount = clickCount + 1;
-  if (clickCount == 1) {
-    labStatus.textContent = `Первое открытие: ${eventName}`;
-  } else {
-    labStatus.textContent = `Повторное открытие: ${eventName}`;
-  }
-
-  detailsTitle.textContent = eventName;
-});
-
-const secondCard = document.querySelector('[data-event="workshop"]');
-const eventName1 = "Мастерская постеров"
-
-secondCard.addEventListener("click", () => {
-  detailsTitle.textContent = eventName1;
-});
 
 const cards = document.querySelectorAll("[data-event]");
 const eventCount = document.querySelector("#event-count");
 eventCount.textContent = cards.length;
 
+const labStatus = document.querySelector("#lab-status")
+
+const detailsTitle = document.querySelector("#details-title")
+const detailsDescription = document.querySelector("#details-description")
+const detailsTime = document.querySelector("#details-time")
+
+function showEvent(card) {
+  detailsTitle.textContent = card.dataset.title;
+  detailsDescription.textContent = card.dataset.description;
+  detailsTime.textContent = card.dataset.time;
+} 
+
 cards.forEach((eventCard) => {
   eventCard.addEventListener("click", () => {
     labStatus.textContent = "Нажата карточка из программы";
+    showEvent(eventCard);
   });
-});
+}); 
+
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
