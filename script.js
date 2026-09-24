@@ -42,6 +42,19 @@ cards.forEach((eventCard) => {
 }); 
 
 
+const surpriseButton = document.querySelector("#surprise-button")
+
+surpriseButton.addEventListener("click", () => {
+  let index = Math.floor(Math.random() * cards.length);
+
+  if (selectedCard === cards[index]) {
+    index = (index + 1) % cards.length;
+  }
+
+  showEvent(cards[index]);
+});
+
+
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
 // обработчик для той же карточки, пока не разобрались с первым.
